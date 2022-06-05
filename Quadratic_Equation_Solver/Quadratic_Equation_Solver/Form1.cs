@@ -16,5 +16,11 @@ namespace Quadratic_Equation_Solver
         {
             InitializeComponent();
         }
+
+        private void buttonstart_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(txtb1.Text);
+
+        }
     }
 }
