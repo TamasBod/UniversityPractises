@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,15 +43,18 @@ namespace UserMaintenance_2022
         private void btnsavetofile_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    if ((myStream = saveFileDialog1.OpenFile()) != null)
-            //    {
-            //        myStream.Close();
-            //    }
-            //}
+
 
             saveFileDialog1.ShowDialog();
+            using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName)) 
+            {
+                foreach (var item in users)
+                {
+                    sw.WriteLine(item.FullName+' '+item.ID);
+                }
+            }
+
+            
         }
     }
 }
