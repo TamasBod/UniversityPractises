@@ -25,13 +25,18 @@ namespace UserMaintenance_2022
             listUsers.ValueMember = "ID";
             listUsers.DisplayMember = "FullName";
 
+
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
             var u = new User()
             {
                 LastName = lastnametxt.Text,
                 FirstName = firstnametxt.Text
             };
             users.Add(u);
-
         }
     }
 }
