@@ -17,8 +17,7 @@ namespace UserMaintenance_2022
         public Form1()
         {
             InitializeComponent();
-            lbllastname.Text = Resource1.LastName;
-            lblfirstname.Text = Resource1.FirstName;
+            lblfullname.Text = Resource1.FullName;
             AddBtn.Text = Resource1.Add;
 
             listUsers.DataSource = users;
@@ -33,8 +32,7 @@ namespace UserMaintenance_2022
         {
             var u = new User()
             {
-                LastName = lastnametxt.Text,
-                FirstName = firstnametxt.Text
+                FullName = fullnametxt.Text
             };
             users.Add(u);
         }
