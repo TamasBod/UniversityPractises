@@ -70,6 +70,15 @@ namespace UserMaintenance_2022 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fájlba írás.
+        /// </summary>
+        internal static string btnsavetofile {
+            get {
+                return ResourceManager.GetString("btnsavetofile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teljes Név.
         /// </summary>
         internal static string FullName {
