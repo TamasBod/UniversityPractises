@@ -70,6 +70,15 @@ namespace UserMaintenance_2022 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Törlés a listából.
+        /// </summary>
+        internal static string btndeletefromlist {
+            get {
+                return ResourceManager.GetString("btndeletefromlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fájlba írás.
         /// </summary>
         internal static string btnsavetofile {

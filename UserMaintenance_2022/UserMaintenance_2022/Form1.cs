@@ -21,6 +21,7 @@ namespace UserMaintenance_2022
             lblfullname.Text = Resource1.FullName;
             AddBtn.Text = Resource1.Add;
             btnsavetofile.Text = Resource1.btnsavetofile;
+            btndeletefromlist.Text = Resource1.btndeletefromlist;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -42,19 +43,30 @@ namespace UserMaintenance_2022
 
         private void btnsavetofile_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            SaveFileDialog sfd = new SaveFileDialog();
 
-
-            saveFileDialog1.ShowDialog();
-            using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName)) 
+            if (sfd.ShowDialog()==DialogResult.OK)
             {
-                foreach (var item in users)
+                using (StreamWriter sw = new StreamWriter(sfd.FileName))
                 {
-                    sw.WriteLine(item.FullName+' '+item.ID);
+                    foreach (User item in users)
+                    {
+                        sw.WriteLine(item.FullName + ";" + item.ID);
+                    }
                 }
             }
+            //saveFileDialog1.ShowDialog();
+
 
             
+        }
+
+        private void btndeletefromlist_Click(object sender, EventArgs e)
+        {
+            //while (listUsers.SelectedItems.Count > 0)
+            //{
+            //    listUsers.Items.Remove(listUsers.SelectedItems[0]);
+            //}
         }
     }
 }

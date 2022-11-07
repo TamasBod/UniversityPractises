@@ -33,6 +33,7 @@
             this.fullnametxt = new System.Windows.Forms.TextBox();
             this.AddBtn = new System.Windows.Forms.Button();
             this.btnsavetofile = new System.Windows.Forms.Button();
+            this.btndeletefromlist = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUsers
@@ -61,7 +62,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(333, 382);
+            this.AddBtn.Location = new System.Drawing.Point(342, 325);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(206, 51);
             this.AddBtn.TabIndex = 5;
@@ -71,7 +72,7 @@
             // 
             // btnsavetofile
             // 
-            this.btnsavetofile.Location = new System.Drawing.Point(545, 382);
+            this.btnsavetofile.Location = new System.Drawing.Point(554, 325);
             this.btnsavetofile.Name = "btnsavetofile";
             this.btnsavetofile.Size = new System.Drawing.Size(206, 51);
             this.btnsavetofile.TabIndex = 6;
@@ -79,11 +80,22 @@
             this.btnsavetofile.UseVisualStyleBackColor = true;
             this.btnsavetofile.Click += new System.EventHandler(this.btnsavetofile_Click);
             // 
+            // btndeletefromlist
+            // 
+            this.btndeletefromlist.Location = new System.Drawing.Point(342, 382);
+            this.btndeletefromlist.Name = "btndeletefromlist";
+            this.btndeletefromlist.Size = new System.Drawing.Size(206, 51);
+            this.btndeletefromlist.TabIndex = 7;
+            this.btndeletefromlist.Text = "button2";
+            this.btndeletefromlist.UseVisualStyleBackColor = true;
+            this.btndeletefromlist.Click += new System.EventHandler(this.btndeletefromlist_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btndeletefromlist);
             this.Controls.Add(this.btnsavetofile);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.fullnametxt);
@@ -103,6 +115,7 @@
         private System.Windows.Forms.TextBox fullnametxt;
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button btnsavetofile;
+        private System.Windows.Forms.Button btndeletefromlist;
     }
 }
 
