@@ -21,7 +21,7 @@ namespace LINQ_Practise
         {
             using (StreamReader sr = new StreamReader(fileName, Encoding.Default))
             {
-                sr.ReadLine(); // Header
+                sr.ReadLine();
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
