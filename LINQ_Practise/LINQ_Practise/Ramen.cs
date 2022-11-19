@@ -14,5 +14,6 @@ namespace LINQ_Practise
         public int CountryFK { get; set; }
         public Country Country { get; set; }
         public double Rating { get; set; }
+        public double Stars { get; set; }
     }
 }
