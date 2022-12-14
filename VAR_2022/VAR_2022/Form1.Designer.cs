@@ -30,6 +30,7 @@
         {
             this.dGw = new System.Windows.Forms.DataGridView();
             this.dGW2 = new System.Windows.Forms.DataGridView();
+            this.savebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGW2)).BeginInit();
             this.SuspendLayout();
@@ -50,11 +51,22 @@
             this.dGW2.Size = new System.Drawing.Size(240, 150);
             this.dGW2.TabIndex = 1;
             // 
+            // savebtn
+            // 
+            this.savebtn.Location = new System.Drawing.Point(367, 276);
+            this.savebtn.Name = "savebtn";
+            this.savebtn.Size = new System.Drawing.Size(75, 23);
+            this.savebtn.TabIndex = 2;
+            this.savebtn.Text = "save";
+            this.savebtn.UseVisualStyleBackColor = true;
+            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.savebtn);
             this.Controls.Add(this.dGW2);
             this.Controls.Add(this.dGw);
             this.Name = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.DataGridView dGw;
         private System.Windows.Forms.DataGridView dGW2;
+        private System.Windows.Forms.Button savebtn;
     }
 }
 
