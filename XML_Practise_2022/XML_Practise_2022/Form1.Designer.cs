@@ -35,9 +35,9 @@
             // dataGW1
             // 
             this.dataGW1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGW1.Location = new System.Drawing.Point(123, 117);
+            this.dataGW1.Location = new System.Drawing.Point(12, 12);
             this.dataGW1.Name = "dataGW1";
-            this.dataGW1.Size = new System.Drawing.Size(240, 150);
+            this.dataGW1.Size = new System.Drawing.Size(666, 426);
             this.dataGW1.TabIndex = 0;
             // 
             // Form1
