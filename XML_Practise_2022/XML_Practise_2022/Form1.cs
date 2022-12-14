@@ -22,11 +22,18 @@ namespace XML_Practise_2022
         public Form1()
         {
             InitializeComponent();
+            RefreshData();
+
+        }
+        
+        private void RefreshData()
+        {
+            if (cmbValuta.SelectedItem == null) return;
+
+            rates.Clear();
             loadXml(getRates());
             dataGW1.DataSource = rates;
             Chart();
-
-
         }
 
         private void Chart()
@@ -91,30 +98,36 @@ namespace XML_Practise_2022
                     rates.Add(rate);
                 }
 
-                
-
-
+               
 
         }
 
         private string getRates()
         {
+            
+
             var mnbService = new MNBArfolyamServiceSoapClient();
-            var request = new GetExchangeRatesRequestBody()
-            {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
-            };
+            GetExchangeRatesRequestBody request = new GetExchangeRatesRequestBody();
+
+
+
+
+            request.currencyNames = cmbValuta.SelectedItem.ToString();
+            request.startDate = dateTimePickerFrom.Value.ToString("yyyy-MM-dd"); //"2020-01-01",
+            request.endDate = dateTimePicker2To.Value.ToString("yyyy-MM-dd"); //"2020-06-30"
+            
 
             var response = mnbService.GetExchangeRates(request);
             return response.GetExchangeRatesResult;
+
             //File.WriteAllText("Teszt.xml", result);
         }
 
 
 
-
-
+        private void Refresh(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }
