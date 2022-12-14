@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 using XML_Practise_2022.Entities;
 using XML_Practise_2022.MnbServiceReference;
@@ -23,8 +24,31 @@ namespace XML_Practise_2022
             InitializeComponent();
             loadXml(getRates());
             dataGW1.DataSource = rates;
+            Chart();
+
 
         }
+
+        private void Chart()
+        {
+            chartRateData.DataSource = rates;
+            var series = chartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            series.BorderWidth = 2;
+
+            var legend = chartRateData.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
+
+        }
+
+
 
         private void loadXml(string xmlstring)
         {
@@ -50,7 +74,7 @@ namespace XML_Practise_2022
             //}
 
 
-            XmlDocument xml = new XmlDocument();
+                XmlDocument xml = new XmlDocument();
                 xml.LoadXml(xmlstring);
 
                 foreach (XmlElement item in xml.DocumentElement)
