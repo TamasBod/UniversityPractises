@@ -18,12 +18,15 @@ namespace XML_Practise_2022
     public partial class Form1 : Form
     {
         BindingList<RateData> rates = new BindingList<RateData>();
+        BindingList<string> currencies = new BindingList<string>();  
 
         public Form1()
         {
             InitializeComponent();
+            LoadCurrencyxml(getcurrencies());
             RefreshData();
-
+            cmbValuta.DataSource = currencies;
+            
         }
         
         private void RefreshData()
@@ -54,7 +57,6 @@ namespace XML_Practise_2022
             chartArea.AxisY.IsStartedFromZero = false;
 
         }
-
 
 
         private void loadXml(string xmlstring)
@@ -123,6 +125,31 @@ namespace XML_Practise_2022
             //File.WriteAllText("Teszt.xml", result);
         }
 
+
+        private string getcurrencies()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            GetCurrenciesRequestBody req = new GetCurrenciesRequestBody();
+            var response = mnbService.GetCurrencies(req);
+
+            //string result = response.GetCurrenciesResult;
+            //File.WriteAllText("currecncy.xml", result);
+
+            return response.GetCurrenciesResult;
+        }
+
+        private void LoadCurrencyxml(string xmlstring)
+        {
+            currencies.Clear();
+
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(xmlstring);
+            foreach (XmlElement item in xml.DocumentElement.ChildNodes[0])
+            {
+                string s = item.InnerText;
+                currencies.Add(s);
+            }
+        }
 
 
         private void Refresh(object sender, EventArgs e)
